@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>fakedata</title>
+</head>
+<body>
+<center><h2>Employee data</h2></center>>
+(% if fdata %)
+<table border="2px">
+    <thead>
+    <tr>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>job</th>
+        <th>sal</th>
+        <th>email</th>
+        <th>city</th>
+        <th>dob</th>
+        <th>address</th>
+    </tr>
+    </thead>
+    (for i in fdata %)
+    <tbody>
+    <tr>
+        <td>{{ i.first_name }}</td>
+        <td>{{ i.last_name }}</td>
+        <td>{{ i.job }}</td>
+        <td>{{ i.sal }}</td>
+        <td>{{ i.email }}</td>
+        <td>{{ i.city }}</td>
+        <td>{{ i.dob }}</td>
+        <td>{{ i.address }}</td>
+    </tr>
+    </tbody>
+    (% end for %)
+</table>
+(% else %)
+<h2> no data is available </h2>
+(% end if %)
+</body>
+</html>

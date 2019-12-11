@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+<html>
+<head>
+    <title>Gallery Page</title>
+</head>
+{% block content %}
+<style>
+    .container img{
+        filter: grayscale(100%);
+        transition: 1.3s;
+    }
+    .container img:hover{
+        filter: grayscale(0);
+        transform: scale(1.1);
+
+    }
+</style>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <a href="{% static 'images/sri1.jpg' %}" data-lightbox="container"><img src="{% static 'images/sri1.jpg' %}" style="width:100%; height:50%"></a>
+        </div>
+        <div class="col-md-4">
+            <a href="{% static 'images/sri2.jpg' %}" data-lightbox="container"><img src="{% static 'images/sri2.jpg' %} " style="width:100%; height:50%"></a>
+        </div>
+
+
+        <div class="col-md-4">
+            <a href="{% static 'images/sri3.jpg' %}" data-lightbox="container"><img src="{% static 'images/sri3.jpg' %}" style="width:100%; height:50%"></a>
+        </div>
+         <div class="col-md-4">
+             <a href="{% static 'images/sri4.jpg' %}" data-lightbox="container"><img src="{% static 'images/sri4.jpg' %} " style="width:100%; height:50%"></a>
+        </div>
+     </div>
+    </div>
+{% endblock %}
+</body>
+</html>
